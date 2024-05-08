@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Adivinhe o numero</h1>
+    <p>chute um numero de 1 a 100</p>
+    <input type="text" id="chute">
+    <button onclick="teste()">testar</button>
+    <p id="resultado"></p>
+    <script>
+        const numpadv = Math.floor(Math.random()*100)+1;
+        let tentativas = 0;
+        function teste(){
+            const nummeu = parseInt(document.getElementById("chute").value);
+            tentativas ++;
+            if(numpadv === nummeu){
+                document.getElementById("resultado").textContent=`parabéns você acertou em ${tentativas} tentativas`
+            }else if(numpadv > nummeu){
+                document.getElementById("resultado").textContent="você errou chute um numero maior"
+            }else{
+                document.getElementById("resultado").textContent="você errou chute um numero menor"
+            }    
+        }
+    </script>
+</body>
+</html>
